@@ -11,7 +11,7 @@
 
         <title>Web-Youtube-Downloader</title>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=400, initial-scale=0.9">
+        <meta name="viewport" content="width=400, initial-scale=0.8">
         <meta name="description" content="Get data of youtube videos and download the sources">
 
         <link rel="stylesheet" href="style.css?v=2" />
@@ -25,7 +25,7 @@
 
         <div id="head-bar">
 
-            <h1 onclick="window.location.href='./';" style="cursor: pointer;"> <i class="fab fa-youtube"></i> Web-Youtube-Downloader</h1>
+            <h1 onclick="window.location.href='./';" style="cursor: pointer;"> <i class="fas fa-file-video"></i> <span id="head-text">Web-Youtube-Downloader</span></h1>
 
             <div class="spacer"></div>
 
