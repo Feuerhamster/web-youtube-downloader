@@ -1,0 +1,48 @@
+extends _layout
+
+block content
+    h2 Video
+    iframe(src="https://www.youtube.com/embed/" + id frameborder="0" allow="autoplay; encrypted-media")
+
+    h2 Formats
+
+    table.formats
+        tr
+            th Format
+            th Quality
+            th Bitrate
+            th Container
+            th Codecs
+            th URL
+        each format in formats
+            tr
+                td
+                    case format.type
+                        when 0
+                            span.format.format-0 Video
+                        when 1
+                            span.format.format-1 Audio
+                        when 2
+                            span.format.format-2 Adaptive
+
+                td= format.quality
+                td= format.bitrate
+                td(class=format.container)= format.container
+                td= format.codecs
+                td
+                    a(href=format.url target="_blank" rel="noreferrer") Download
+
+    h2 Thumbnails
+    table
+        tr
+            th Image
+            th Size
+            th Download
+        each thumbnail in thumbnails
+            tr
+                td
+                    img(src=thumbnail.url)
+
+                td= thumbnail.size
+                td
+                    a(href=thumbnail.url target="_blank" rel="noreferrer") Download
