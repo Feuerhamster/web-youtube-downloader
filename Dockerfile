@@ -23,10 +23,8 @@ ENV NODE_ENV=production
 RUN mkdir /app
 WORKDIR /app
 
-COPY package*.json ./
+COPY . /app/
 COPY --from=builder /app/dist dist
-
-RUN mkdir targets
 
 # install production dependencies
 RUN npm ci
