@@ -1,4 +1,4 @@
-import ytdl, {videoInfo} from "ytdl-core";
+import ytdl, {videoInfo} from "@distube/ytdl-core";
 import {FormatType, VideoData} from "../types/youtube";
 import NodeCache from "node-cache";
 
@@ -32,8 +32,7 @@ export class YouTube {
             url: t.url,
             size: `${t.width}x${t.height}`
         }));
-
-        videoData.formats = video.formats.map((f) => ({
+        videoData.formats = video.formats.filter((f) => f.hasVideo || f.hasAudio).map((f) => ({
             type: f.hasVideo && f.hasAudio ? FormatType.main : f.hasVideo ? FormatType.video : FormatType.audio,
             quality: f.qualityLabel,
             container: f.container,
