@@ -182,6 +182,11 @@ td.webm {
     font-weight: bold;
 }
 
+td.ts {
+    color: #dadd37;
+    font-weight: bold;
+}
+
 /*
 * Iframe
 */
